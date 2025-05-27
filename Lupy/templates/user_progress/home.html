@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello, {{name}}!Here are your current skills:</h1>
+    <table border=1>
+        <thead>
+            <th>Skill</th>
+            <th>Description</th>
+            <th>Level</th>
+            <th>Started On: </th>
+        </thead>
+        <tbody>
+            {% for skill in skills %}
+                <tr>
+                    <td>{{skill.name}}</td>
+                    <td>{{skill.description}}</td>
+                    <td>{{skill.level}}</td>
+                    <td>{{skill.date_started_learning}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'user_progress:add_skills' %}">Add skills</a>
+</body>
+</html>
