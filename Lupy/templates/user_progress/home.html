@@ -20,7 +20,9 @@
                     <td>{{skill.name}}</td>
                     <td>{{skill.description}}</td>
                     <td>{{skill.level}}</td>
-                    <td>{{skill.date_started_learning}}</td>
+                    <td>{{skill.date_started_learning}}</td> <!--I intend to add other dates in the future-->
+                    <td><a href="{% url 'user_progress:edit_skills' skill.id %}">Edit</a></td>
+                    <td><a href="{% url 'user_progress:remove_skills' skill.id %}">Remove</a></td>
                 </tr>
             {% endfor %}
         </tbody>

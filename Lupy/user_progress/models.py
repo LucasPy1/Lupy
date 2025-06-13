@@ -9,7 +9,7 @@ class SkillModel(models.Model):
 
     name = models.CharField(max_length=50)
     description = models.TextField(null=True, blank=True)
-    level = models.PositiveSmallIntegerField()  # I can change to SmallIntegerField if needed, it holds higher nums.
+    level = models.PositiveSmallIntegerField(default=1)  # I can change to SmallIntegerField if needed, it holds higher nums.
     date_started_learning = models.DateField(auto_now_add=True)
 
     def __str__(self):
