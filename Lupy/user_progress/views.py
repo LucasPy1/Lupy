@@ -3,6 +3,12 @@ from .forms import SkillForm
 from .models import SkillModel
 from django.http import HttpRequest
 
+def login(request):
+    ...
+
+def sign_up(request):
+    ...
+
 def home(request):
     context = {
         'name':'Lucas',
