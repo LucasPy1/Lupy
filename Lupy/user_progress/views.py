@@ -48,4 +48,9 @@ def edit_skills(request:HttpRequest,id):
     
     return render(request,'user_progress/edit_skills.html',context)
 
+def temp(request):
+    return render(request,'user_progress/skills_preview.html')
+
+def temp2(request):
+    return render(request,'user_progress/skills_preview2.html')
 

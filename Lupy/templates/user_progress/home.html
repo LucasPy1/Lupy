@@ -29,28 +29,15 @@
     <div class="character-tab">Brain pic, skills and more</div>
     <div class="daily-objectives-tab">Read,write, play guitar, practice a skill, practice 2 skills...</div>
     <h1>Hello, {{name}}!</h1>
-    <table border=1>
-        <thead>
-            <th>Skill</th>
-            <th>Description</th>
-            <th>Level</th>
-            <th>Started On: </th>
-        </thead>
-        <tbody>
+    <div class="skill-resume-tab"><!--List skills, filter option and more-->
+        <div class="skill-header">Skills</div>
             {% for skill in skills %}
-                <tr>
-                    <td>{{skill.name}}</td>
-                    <td>{{skill.description}}</td>
-                    <td>{{skill.level}}</td>
-                    <td>{{skill.date_started_learning}}</td> <!--I intend to add other dates in the future-->
-                    <td><a href="{% url 'user_progress:edit_skills' skill.id %}">Edit</a></td>
-                    <td><a href="{% url 'user_progress:remove_skills' skill.id %}">Remove</a></td>
-                </tr>
+                <div class="skill-item" ></div>
+                    <div class="skill-name">{{skill.name}}</div>
+                    <div class="progress-bar" style="width: 70%;"></div>
+                    <div class="skill-level">{{skill.level}}</div>
             {% endfor %}
-        </tbody>
-    </table>
-    <div class="skill-resume-tab">List skills, filter option and more
-        <div class="skill-box">Guitar</div>
+        </div>
     </div>
     <a href="{% url 'user_progress:add_skills' %}">Add skills</a>
 
