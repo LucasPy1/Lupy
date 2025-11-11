@@ -36,11 +36,14 @@
                     <div class="skill-name">{{skill.name}}</div>
                     <div class="progress-bar" style="width: 70%;"></div>
                     <div class="skill-level">{{skill.level}}</div>
+                    <a href="{% url 'user_progress:edit_skills' skill.id %}">Edit</a>
+                    <a href="{% url 'user_progress:remove_skills' skill.id %}">Remove</a>
             {% endfor %}
+            
         </div>
+        <a href="{% url 'user_progress:add_skills' %}">Add skills</a>
     </div>
-    <a href="{% url 'user_progress:add_skills' %}">Add skills</a>
-
+    
     </div>
 
     <script>
